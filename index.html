@@ -15,6 +15,37 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="rmsidtest.github.io" />
 
+<!-- 카카오링크 스크립트 -->
+  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <!-- /body 윗부분에 추가-->
+<script>
+    var firstImg=$(".imageblock:first-of-type img");
+    var contents="";
+    if(firstImg.attr("src")){
+        var firstImgSrc=firstImg.attr("src");
+        var firstImgRatio = parseInt(firstImg.css("height"))/parseInt(firstImg.css("width"));
+        if (firstImgRatio <=0.27) var firstImgRatio=0.27;
+    }else{var firstImgSrc=location.origin+"/favicon.ico";var firstImgRatio=1}
+  
+    Kakao.init('c7effa10a95e8153c4c03772c305131e');   // 사용할 앱의 JavaScript 키를 설정해 주세요.
+
+    function sendLink() {
+      Kakao.Link.sendTalkLink({
+        label: '[##_윤석철 선생, 박정옥 여사 고희연 초대장_##]', // 공유할 메세지의 제목을 설정
+				 image: {
+        src: firstImgSrc,
+        width: '300',
+        height: parseInt(300*firstImgRatio)
+      } // 이건 썸네일을 설정 하는 겁니다.
+				,
+      webButton: {
+        text: '초대장 보러가기^ㅡ^',
+         url : document.URL // 각각의 포스팅 본문의 링크를 거는 코드입니다. 
+      }
+      });
+    }
+</script>
+
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
 <style>
 * {
@@ -233,6 +264,11 @@ body {
 				<div class="is">16, 30, 30-1, 30-3, 70, 340, 341, 351, 3318, 3319, 3411, 4318</div>
 			</div>
 		</div>
+	
+	<!--------------------- 카카오톡 공유하기 버튼 
+		<a id="kakao-link-btn" href="javascript:sendLink()">
+           <img src="./images/업로드한_이미지_파일" ></a>  ----------------------------->
+	
 		<div class="copy">
 			© Copyright 2016, Chandoc-Yoon
 		</div>
