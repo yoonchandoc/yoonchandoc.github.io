@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
 
 <meta property="og:site_name" content="party" />
-<meta property="og:title" content=" 축하해 주세요." />
+<meta property="og:title" content=" 삼가 모십니다." />
 <meta property="og:description" content="2016년 2월 3일 오후 1시~3시  축하해주세요~" />
 <meta property="og:image" content="https://cloud.githubusercontent.com/assets/16554116/12774533/375b55dc-ca89-11e5-9829-e5984d1d2efa.jpg" />
 <meta property="og:image" content="https://cloud.githubusercontent.com/assets/16554116/12774535/375cf090-ca89-11e5-8589-c69d0f62defb.jpg" />
@@ -32,15 +32,15 @@
 
     function sendLink() {
       Kakao.Link.sendTalkLink({
-        label: '[##_윤석철 선생, 박정옥 여사 고희연 초대장_##]', // 공유할 메세지의 제목을 설정
+        label: '[##_윤석철 선생, 박정옥 여사 고희연에 초대합니다._##]', // 공유할 메세지의 제목을 설정
 				 image: {
-        src: firstImgSrc,
+        src: 'https://cloud.githubusercontent.com/assets/18310155/14326669/00a1e584-fc6a-11e5-8ad3-31565010a71a.jpg',
         width: '300',
-        height: parseInt(300*firstImgRatio)
+        height: '200'(300*firstImgRatio)
       } // 이건 썸네일을 설정 하는 겁니다.
 				,
       webButton: {
-        text: '초대장 보러가기^ㅡ^',
+        text: '초대장 보러가기^^',
          url : "http://yoonchandoc.github.io" // 각각의 포스팅 본문의 링크를 거는 코드입니다. 
       }
       });
@@ -269,12 +269,12 @@ body {
 	<!-- 카카오톡 공유하기 버튼	--->
 		<a id="kakao-link-btn" href="javascript:sendLink()">
            <img src="https://cloud.githubusercontent.com/assets/18310155/14329725/c7659a00-fc77-11e5-9173-74368bc2fa59.jpg" ></a>  
-
+<!-- 카카오톡 공유하기 버튼 끝	-->
 		<div class="copy">
 			© Copyright 2016, YOONCHANDOC
 		</div>
 	</div>
-	<!-- 카카오톡 공유하기 버튼 끝	--->
+	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?signed_in=true"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
