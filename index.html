@@ -17,9 +17,16 @@
 
 <!-- 카카오링크 스크립트 -->
   <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
- <!-- 카카오링크 스크립트 끝 -->
+  <style type='text/css'>
+  /* <![CDATA[ */
+    #file-input-wrapper {
+    	display : none ;
+    	margin-top : 50px ;
+    }
+  /* ]]> */
+</style>
 
-<script>
+<!-- <script>
     var firstImg=$(".imageblock:first-of-type img");
     var contents="";
     if(firstImg.attr("src")){
@@ -36,7 +43,7 @@
 				 image: {
         src: 'https://cloud.githubusercontent.com/assets/18310155/14326669/00a1e584-fc6a-11e5-8ad3-31565010a71a.jpg',
         width: '300',
-        height: '200'(300*firstImgRatio)
+        height: '200'
       } // 이건 썸네일을 설정 하는 겁니다.
 				,
       webButton: {
@@ -45,8 +52,9 @@
       }
       });
     }
-</script>
-
+</script> -->
+ <!-- 카카오링크 스크립트 끝 -->
+ 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
 <style>
 * {
@@ -266,10 +274,39 @@ body {
 			</div>
 		</div>
 	
+
+
 	<!-- 카카오톡 공유하기 버튼	--->
-		<a id="kakao-link-btn" href="javascript:sendLink()">
-           <img src="https://cloud.githubusercontent.com/assets/18310155/14329725/c7659a00-fc77-11e5-9173-74368bc2fa59.jpg" ></a>  
+	
+	<h3>카카오톡 앱이 설치되어 있는 모바일 기기라면 아래의 링크가 동작합니다.</h3>
+<a id="kakao-link-btn" href="javascript:;">
+<img src="https://cloud.githubusercontent.com/assets/18310155/14329725/c7659a00-fc77-11e5-9173-74368bc2fa59.jpg"/>
+</a>
+<script type='text/javascript'>
+  //<![CDATA[
+    // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    Kakao.init('c7effa10a95e8153c4c03772c305131e');
+    // // 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+    Kakao.Link.createTalkLinkButton({
+      container: '#kakao-link-btn',
+      label: '[##_윤석철 선생, 박정옥 여사 고희연에 초대합니다._##]',
+      image: {
+        src: 'http://dn.api1.kage.kakao.co.kr/14/dn/btqaWmFftyx/tBbQPH764Maw2R6IBhXd6K/o.jpg',
+        width: '300',
+        height: '200'
+      },
+      webButton: {
+        text: '초대장 보러가기^^',
+        url: 'https://yoonchandoc.github.io' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+      }
+    });
+  //]]>
+</script>
+
+	
 <!-- 카카오톡 공유하기 버튼 끝	-->
+
+
 		<div class="copy">
 			© Copyright 2016, YOONCHANDOC
 		</div>
